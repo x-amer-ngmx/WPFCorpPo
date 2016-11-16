@@ -1,0 +1,360 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="SbytSQL.FunctionalWindow.Window_Setings"
+        Title="Window_Setings" Height="Auto" Width="Auto" WindowStartupLocation="CenterScreen" Closing="Window_Closing" d:DesignHeight="774">
+    <Grid Margin="0" Background="#FFEEEEEE" HorizontalAlignment="Center" VerticalAlignment="Center" Width="679"  Height="auto">
+        <Border CornerRadius="10" BorderBrush="#FF646464" BorderThickness="1">
+            <Border.Effect>
+                <DropShadowEffect Direction="325" RenderingBias="Quality" ShadowDepth="1" />
+            </Border.Effect>
+        </Border>
+        <DockPanel LastChildFill="True" Margin="4" Width="668"  Height="438">
+            <TabControl DockPanel.Dock="Top" VerticalAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0">
+                <TabItem IsHitTestVisible="True" SnapsToDevicePixels="True">
+					<TabItem.Header>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock TextAlignment="Center">
+								Пути доступа,<LineBreak /> идентиф
+							</TextBlock>
+						</StackPanel>
+					</TabItem.Header>
+                    <Grid Background="#FFE5E5E5" Height="345">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="100" />
+                        </Grid.RowDefinitions>
+                        <Button HorizontalAlignment="Left" Margin="100,59,0,0" VerticalAlignment="Top" Click="Button_Click" Style="{StaticResource CircleButton}" Background="#FF76A8C5" ToolTip="Открыть директорию">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/SbytSQL;component/graphic/kde_folder_txt.png" Width="32" Margin="6" />
+                            </StackPanel>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="100,113,0,0" VerticalAlignment="Top" Click="Button_Click_2" Style="{StaticResource CircleButton}" Background="#FF76A8C5" ToolTip="Открыть директорию">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/SbytSQL;component/graphic/kde_folder_tar.png" Width="32" Margin="6" />
+                            </StackPanel>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="100,168,0,0" VerticalAlignment="Top" Click="Button_Click_3" Style="{StaticResource CircleButton}" Background="#FF76A8C5" ToolTip="Открыть директорию">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/SbytSQL;component/graphic/orange_folder_public.png" Width="32" Margin="6" />
+                            </StackPanel>
+                        </Button>
+                        <TextBlock HorizontalAlignment="Left" Margin="190,55,0,0" TextWrapping="Wrap" Text="Директория шаблонов (локальная):" VerticalAlignment="Top" FontWeight="Bold" />
+                        <TextBlock HorizontalAlignment="Left" Margin="190,110,0,0" TextWrapping="Wrap" Text="Директория архивации базы:" VerticalAlignment="Top" FontWeight="Bold" />
+                        <TextBlock HorizontalAlignment="Left" Margin="190,165,0,0" TextWrapping="Wrap" Text="Директория выходных файлов (локальная):" VerticalAlignment="Top" FontWeight="Bold" />
+
+                        <TextBox x:Name="p1" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="165,75,0,0" IsEnabled="False" Width="400" />
+                        <TextBox x:Name="p2" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="165,130,0,0" IsEnabled="False" Width="400" />
+                        <TextBox x:Name="p3" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="165,185,0,0" IsEnabled="False" Width="400" />
+
+                        <Separator Grid.Row="1" VerticalAlignment="Top" Margin="30,7,30,0" />
+
+                        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Text="Филлиал:" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Margin="30,10,0,0" />
+                        <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="Участок:" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Margin="-100,10,0,0" />
+                        <TextBlock Grid.Row="1" HorizontalAlignment="Right" Text="Районный центр:" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Margin="0,10,63,0" />
+
+                        <ComboBox Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="170" Margin="30,0,0,0" />
+                        <ComboBox Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="170" />
+                        <TextBox Grid.Row="1" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="170" Margin="0,0,30,0" />
+                    </Grid>
+                </TabItem>
+                <TabItem>
+					<TabItem.Header>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock TextAlignment="Center">
+								Управление <LineBreak /> доступом
+							</TextBlock>
+						</StackPanel>
+					</TabItem.Header>
+                    <Grid Background="#FFE5E5E5" Height="345">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="150" />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition />
+							<RowDefinition />
+							<RowDefinition />
+							<RowDefinition />
+						</Grid.RowDefinitions>
+						<Button Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5" Margin="10,0,10,0" FontSize="14">
+							<TextBlock TextAlignment="Center" Text="Добавить пользователя" TextWrapping="Wrap" />
+						</Button>
+						<Button Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5" Margin="15,0,15,0" FontSize="14">
+							<TextBlock TextAlignment="Center" Text="Удалить пользователя" TextWrapping="Wrap" />
+						</Button>
+						<Button Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5" FontSize="14">
+							<TextBlock TextAlignment="Center" Text="Сменить пароль" TextWrapping="Wrap" />
+						</Button>
+						<Button Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5" FontSize="14">
+							<TextBlock TextAlignment="Center" Text="Сменить группу" TextWrapping="Wrap" />
+						</Button>
+
+						<DataGrid x:Name="UserGroup"
+						AutoGenerateColumns="False"
+
+						Grid.Column="1"
+						Grid.RowSpan="4"
+						Width="498"
+						CanUserResizeRows="False"
+						CanUserAddRows="False"
+						CanUserDeleteRows="False"
+						IsReadOnly="True">
+
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="Пользователь" Binding="{Binding user}" Width="Auto" />
+								<DataGridTextColumn Header="Группа" Binding="{Binding group}" Width="*" />
+							</DataGrid.Columns>
+							<DataGrid.Items>
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+								<RowDefinition />
+							</DataGrid.Items>
+						</DataGrid>
+					</Grid>
+                </TabItem>
+                <TabItem>
+					<TabItem.Header>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock TextAlignment="Center">
+							Реквизиты ПУ <LineBreak /> и филиала
+							</TextBlock>
+						</StackPanel>
+					</TabItem.Header>
+                    <Grid Background="#FFE5E5E5" Height="345">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="28" />
+							<RowDefinition Height="28" />
+							<RowDefinition Height="28" />
+							<RowDefinition Height="28" />
+							<RowDefinition Height="28" />
+							<RowDefinition Height="28" />
+							<RowDefinition Height="28" />
+							<RowDefinition Height="28" />
+							<RowDefinition Height="28" />
+							<RowDefinition Height="28" />
+							<RowDefinition Height="28" />
+							<RowDefinition Height="28" />
+						</Grid.RowDefinitions>
+						<TextBlock Text="ИНН организации :" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						<TextBox Margin="120,0,0,0" MaxLength="20" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+						<TextBlock Grid.Row="1" Text="Адрес ПУ :" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						<TextBox Grid.Row="1" Margin="85,0,10,0" MaxLength="20" VerticalAlignment="Center" />
+
+						<TextBlock Grid.Row="2" Text="Телефон ПУ :" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						<TextBox Grid.Row="2" Margin="85,0,0,0" MaxLength="20" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+						<TextBlock Grid.Row="3" Text="Место нахождение ПУ :" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						<TextBox Grid.Row="3" Margin="145,0,10,0" MaxLength="20" VerticalAlignment="Center" />
+
+						<TextBlock Grid.Row="4" Text="Реквизиты банка участка :" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						<TextBlock Grid.Row="4" Text="БИК :" Margin="155,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						<TextBlock Grid.Row="4" Text="Отделение банка :" Margin="350,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+						<TextBox Grid.Row="4" Margin="190,0,0,0" MaxLength="20" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						<TextBox Grid.Row="4" Margin="460,0,10,0" MaxLength="20" VerticalAlignment="Center" />
+
+						<TextBlock Grid.Row="5" Text="р/сч :" Margin="155,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						<TextBlock Grid.Row="5" Text="к/с :" Margin="430,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+						<TextBox Grid.Row="5" Margin="190,0,0,0" MaxLength="20" Width="230" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						<TextBox Grid.Row="5" Margin="460,0,10,0" MaxLength="20" VerticalAlignment="Center" />
+
+						<TextBlock Grid.Row="6" Text="ФИО начальника ПУ :" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						<TextBox Grid.Row="6" Margin="135,0,10,0" MaxLength="20" VerticalAlignment="Center" />
+
+						<TextBlock Grid.Row="7" Text="№ доверенности начальника ПУ :" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						<TextBlock Grid.Row="7" Text="Дата доверенности начальника ПУ :" Margin="325,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+						<TextBox Grid.Row="7" Margin="195,0,10,0" MaxLength="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						<DatePicker Grid.Row="7" Height="25" Width="110" Margin="0,0,10,0" HorizontalAlignment="Right" Foreground="#FF333333" />
+
+						<TextBlock Grid.Row="8" Text="Адрес филиала :" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						<TextBox Grid.Row="8" Margin="105,0,10,0" MaxLength="20" VerticalAlignment="Center" />
+
+						<TextBlock Grid.Row="9" Text="Телефон филиала :" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						<TextBox Grid.Row="9" Margin="120,0,10,0" MaxLength="20" Width="160" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+						<TextBlock Grid.Row="10" Text="Адрес для сообщения информации об авариях (РРЭС ОАО &quot;Кубаньэнергоэ&quot;) :" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						<TextBox Grid.Row="11" Margin="0,0,10,0" MaxLength="20" VerticalAlignment="Center" />
+					</Grid>
+                </TabItem>
+                <TabItem>
+					<TabItem.Header>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock TextAlignment="Center">
+								Уведомления <LineBreak /> и шаблоны
+							</TextBlock>
+						</StackPanel>
+					</TabItem.Header>
+                    <Grid Background="#FFE5E5E5" Height="345">
+					</Grid>
+                </TabItem>
+                <TabItem>
+					<TabItem.Header>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock TextAlignment="Center">
+								Прочие <LineBreak />настройки
+							</TextBlock>
+						</StackPanel>
+					</TabItem.Header>
+                    <Grid Background="#FFE5E5E5" Height="345">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="30*" />
+							<ColumnDefinition Width="15*" />
+							<ColumnDefinition Width="auto" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="1.5*" />
+							<RowDefinition />
+						</Grid.RowDefinitions>
+
+						<TextBlock Grid.ColumnSpan="2" Text="Сообщения в примичании при наличии/отсутствии признака" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15,0,0" />
+
+						<DataGrid
+						x:Name="PrefixYesNo"
+						Grid.ColumnSpan="2"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+						AutoGenerateColumns="False"
+						Width="398"
+						Height="150"
+						CanUserResizeRows="False"
+						CanUserAddRows="False"
+						CanUserDeleteRows="False"
+						IsReadOnly="True" Margin="16,32,0,0">
+
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="Признак" Binding="{Binding user}" Width="Auto" />
+								<DataGridTemplateColumn Header="Содержит" Width="Auto">
+									<DataGridTemplateColumn.CellTemplate>
+										<DataTemplate>
+											<CheckBox Name="egect" HorizontalAlignment="Center" IsChecked="{Binding Path=Discontinue,Mode=TwoWay}" Margin="0 2 0 0" />
+										</DataTemplate>
+									</DataGridTemplateColumn.CellTemplate>
+								</DataGridTemplateColumn>
+								<DataGridTextColumn Header="Сообщение" Binding="{Binding group}" Width="*" />
+								<DataGridTemplateColumn Header="Применять" Width="Auto">
+									<DataGridTemplateColumn.CellTemplate>
+										<DataTemplate>
+											<CheckBox Name="egect" HorizontalAlignment="Center" IsChecked="{Binding Path=Discontinue,Mode=TwoWay}" Margin="0 2 0 0" />
+										</DataTemplate>
+									</DataGridTemplateColumn.CellTemplate>
+								</DataGridTemplateColumn>
+							</DataGrid.Columns>
+							<DataGrid.Items>
+								<RowDefinition />
+							</DataGrid.Items>
+						</DataGrid>
+						<TextBlock Grid.Column="2" Text="Регионы УСЗН" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15,0,0" />
+						<ListBox Grid.Column="2" HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="190" Margin="0,32,0,0">
+							<ListBox.Items>
+								<CheckBox Content="ahsdjkh" />
+								<CheckBox Content="ahsdjkh" />
+								<CheckBox Content="ahsdjkh" />
+								<CheckBox Content="ahsdjkh" />
+								<CheckBox Content="ahsdjkh" />
+								<CheckBox Content="ahsdjkh" />
+								<CheckBox Content="ahsdjkh" />
+								<CheckBox Content="ahsdjkh" />
+							</ListBox.Items>
+						</ListBox>
+
+						<GroupBox Grid.Row="1" BorderBrush="#FF324551" Margin="0,0,0,0" Padding="0,0,0,0"  HorizontalAlignment="Center" VerticalAlignment="Top">
+							<GroupBox.Header>
+								<Label>Отображать в ведомость контрольных съёмов:</Label>
+							</GroupBox.Header>
+							<Grid>
+							<CheckBox Content="№ счётчика" />
+							<CheckBox Content="Фамилию абонента" Margin="0,15,0,0" />
+							<CheckBox Content="Показания с квитанции" Margin="0,30,0,0" />
+							<CheckBox Content="Примечание" Margin="0,60,0,0" />
+							<CheckBox Content="Сообщение при отсутствии договора" Margin="0,75,0,0" />
+							</Grid>
+						</GroupBox>
+
+						<CheckBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Content="Звуковое сопровождение программы" Margin="0" VerticalAlignment="Top" HorizontalAlignment="Center" />
+						<TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,25,0,0" Text="Отсрочка для прохожд. квитанции        дн." VerticalAlignment="Top" HorizontalAlignment="Center" />
+						<TextBox  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,24,65,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="20" MaxLength="1" />
+
+						<GroupBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" BorderBrush="#FF324551" Margin="0,50,0,0" Padding="4"  HorizontalAlignment="Center" VerticalAlignment="Top">
+							<Grid>
+							<TextBlock>Период обхода <LineBreak /> всех абонентов:</TextBlock>
+							<ComboBox HorizontalAlignment="Left" VerticalAlignment="Center" Margin="100,0,0,0" Width="50" Name="cmdMonths" />
+							<TextBlock Text="месяцев" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="160,0,20,0" />
+							</Grid>
+						</GroupBox>
+
+						<TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Время блокировки программы (мин):" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,100,0,0" />
+                        <TextBlock x:Name="sliderValuer" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding ElementName=timeOff,Path=Value}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="285,101,0,0" />
+						<Slider x:Name="timeOff" Grid.ColumnSpan="2" Grid.Column="1"  Margin="0,115,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="250" Maximum="60" TickPlacement="BottomRight" SmallChange="1" Minimum="10" SnapsToDevicePixels="True" SelectionEnd="60" SelectionStart="10" ValueChanged="timeOff_ValueChanged" AutoToolTipPlacement="TopLeft" Interval="1" IsSnapToTickEnabled="True" />
+					</Grid>
+                </TabItem>
+                <TabItem>
+					<TabItem.Header>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock TextAlignment="Center">
+								Настройки <LineBreak />репликаций
+							</TextBlock>
+						</StackPanel>
+					</TabItem.Header>
+                    <Grid Background="#FFE5E5E5" Height="345">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="40" />
+							<RowDefinition Height="40" />
+						</Grid.RowDefinitions>
+						<TextBlock Text="Учётная запись агента моментальных снимков :" Width="Auto" Height="Auto" VerticalAlignment="Center" Padding="10,0,0,0" />
+						<TextBox Grid.Column="1" VerticalAlignment="Center" Padding="0" Margin="0,0,10,0" />
+
+						<TextBlock Grid.Row="1" Text="Учётная запись агента чтения журнала трансакций :" Width="Auto" Height="Auto" VerticalAlignment="Center" Padding="10,0,0,0" />
+						<TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Padding="0" Margin="0,0,10,0" />
+					</Grid>
+                </TabItem>
+            </TabControl>
+            <Grid DockPanel.Dock="Top" Height="40">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Padding="3" Margin="0,0,30,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/SbytSQL;component/graphic/check.png" Width="16" Margin="0,0,4,0" />
+                        <TextBlock Foreground="#FF138D19" FontWeight="Bold">Применить</TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="3" Margin="30,0,0,0" Command="{Binding Path=Content.DataContext.CloseCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TabItem}}}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/SbytSQL;component/graphic/deletered.png" Width="16" Margin="0,0,4,0" />
+                        <TextBlock Foreground="#FFF10909" FontWeight="Bold">Отменить</TextBlock>
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>
