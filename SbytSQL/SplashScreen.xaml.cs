@@ -10,30 +10,25 @@ namespace SbytSQL
     /// </summary>
     public partial class SplashScreen : Window
     {
+        
         public SplashScreen()
         {
             InitializeComponent();
+
+            var myTimer = new System.Windows.Forms.Timer();
+            myTimer.Interval = 3000;
+            myTimer.Tick += myTimer_Tick;
+            myTimer.Start();
+            
         }
 
-        private void Window_Activated(object sender, System.EventArgs e)
+        void myTimer_Tick(object sender, System.EventArgs e)
         {
-            StartCloseTimer();
-        }
-
-        private void StartCloseTimer()
-        {
-            var timer = new DispatcherTimer {Interval = TimeSpan.FromSeconds(3d)};
-            timer.Tick += Timer_Tick;
-            timer.Start();
-
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            var time = (DispatcherTimer) sender;
-            time.Stop();
-            time.Tick -= Timer_Tick;
-            this.Close();
+            var myTimer = (System.Windows.Forms.Timer) sender;
+            myTimer.Stop();
+            myTimer.Tick -= myTimer_Tick;
+            Close();
         }
     }
+
 }
